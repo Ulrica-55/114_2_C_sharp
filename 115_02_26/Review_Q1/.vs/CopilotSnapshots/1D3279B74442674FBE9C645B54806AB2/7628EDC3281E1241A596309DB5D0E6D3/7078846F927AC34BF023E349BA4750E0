@@ -1,0 +1,176 @@
+﻿namespace Review_Q1
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.PictureBox computerPictureBox;
+        private System.Windows.Forms.PictureBox playerPictureBox;
+        private System.Windows.Forms.Button stoneButton;
+        private System.Windows.Forms.Button paperButton;
+        private System.Windows.Forms.Button scissorButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.Label computerLabel;
+        private System.Windows.Forms.Label playerLabel;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.computerPictureBox = new System.Windows.Forms.PictureBox();
+            this.playerPictureBox = new System.Windows.Forms.PictureBox();
+            this.stoneButton = new System.Windows.Forms.Button();
+            this.paperButton = new System.Windows.Forms.Button();
+            this.scissorButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.resultLabel = new System.Windows.Forms.Label();
+            this.computerLabel = new System.Windows.Forms.Label();
+            this.playerLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.computerPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // computerLabel
+            // 
+            this.computerLabel.AutoSize = true;
+            this.computerLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.computerLabel.Location = new System.Drawing.Point(110, 18);
+            this.computerLabel.Name = "computerLabel";
+            this.computerLabel.Size = new System.Drawing.Size(62, 20);
+            this.computerLabel.TabIndex = 0;
+            this.computerLabel.Text = "電腦出";
+            // 
+            // playerLabel
+            // 
+            this.playerLabel.AutoSize = true;
+            this.playerLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.playerLabel.Location = new System.Drawing.Point(470, 18);
+            this.playerLabel.Name = "playerLabel";
+            this.playerLabel.Size = new System.Drawing.Size(62, 20);
+            this.playerLabel.TabIndex = 1;
+            this.playerLabel.Text = "玩家出";
+            // 
+            // computerPictureBox
+            // 
+            this.computerPictureBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.computerPictureBox.Location = new System.Drawing.Point(40, 50);
+            this.computerPictureBox.Name = "computerPictureBox";
+            this.computerPictureBox.Size = new System.Drawing.Size(240, 140);
+            this.computerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.computerPictureBox.TabIndex = 2;
+            this.computerPictureBox.TabStop = false;
+            // 
+            // playerPictureBox
+            // 
+            this.playerPictureBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.playerPictureBox.Location = new System.Drawing.Point(380, 50);
+            this.playerPictureBox.Name = "playerPictureBox";
+            this.playerPictureBox.Size = new System.Drawing.Size(240, 140);
+            this.playerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.playerPictureBox.TabIndex = 3;
+            this.playerPictureBox.TabStop = false;
+            // 
+            // resultLabel
+            // 
+            this.resultLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.resultLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.resultLabel.Location = new System.Drawing.Point(160, 210);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(320, 36);
+            this.resultLabel.TabIndex = 4;
+            this.resultLabel.Text = "";
+            this.resultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // stoneButton
+            // 
+            this.stoneButton.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.stoneButton.Location = new System.Drawing.Point(90, 265);
+            this.stoneButton.Name = "stoneButton";
+            this.stoneButton.Size = new System.Drawing.Size(120, 48);
+            this.stoneButton.TabIndex = 5;
+            this.stoneButton.Text = "石頭";
+            this.stoneButton.UseVisualStyleBackColor = true;
+            this.stoneButton.Click += new System.EventHandler(this.stoneButton_Click);
+            // 
+            // paperButton
+            // 
+            this.paperButton.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.paperButton.Location = new System.Drawing.Point(250, 265);
+            this.paperButton.Name = "paperButton";
+            this.paperButton.Size = new System.Drawing.Size(120, 48);
+            this.paperButton.TabIndex = 6;
+            this.paperButton.Text = "布";
+            this.paperButton.UseVisualStyleBackColor = true;
+            this.paperButton.Click += new System.EventHandler(this.paperButton_Click);
+            // 
+            // scissorButton
+            // 
+            this.scissorButton.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.scissorButton.Location = new System.Drawing.Point(410, 265);
+            this.scissorButton.Name = "scissorButton";
+            this.scissorButton.Size = new System.Drawing.Size(120, 48);
+            this.scissorButton.TabIndex = 7;
+            this.scissorButton.Text = "剪刀";
+            this.scissorButton.UseVisualStyleBackColor = true;
+            this.scissorButton.Click += new System.EventHandler(this.scissorButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exitButton.Location = new System.Drawing.Point(260, 330);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(120, 44);
+            this.exitButton.TabIndex = 8;
+            this.exitButton.Text = "結束遊戲";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(660, 400);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.scissorButton);
+            this.Controls.Add(this.paperButton);
+            this.Controls.Add(this.stoneButton);
+            this.Controls.Add(this.resultLabel);
+            this.Controls.Add(this.playerPictureBox);
+            this.Controls.Add(this.computerPictureBox);
+            this.Controls.Add(this.playerLabel);
+            this.Controls.Add(this.computerLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.Text = "猜拳遊戲";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.computerPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+    }
+}

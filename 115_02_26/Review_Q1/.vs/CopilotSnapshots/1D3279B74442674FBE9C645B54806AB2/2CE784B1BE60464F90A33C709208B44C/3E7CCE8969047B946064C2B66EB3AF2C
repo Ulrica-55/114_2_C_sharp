@@ -1,0 +1,138 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Review_Q1
+{
+    public partial class Form1 : Form
+    {
+        private enum Choice { None = 0, Rock = 1, Paper = 2, Scissors = 3 }
+
+        private Choice compChoice = Choice.None;
+        private Choice playerChoice = Choice.None;
+        private int playerWins = 0;
+        private int compWins = 0;
+        private int ties = 0;
+        private readonly Random rnd = new Random();
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            playerPictureBox.Image = null;
+            computerPictureBox.Image = null;
+            resultLabel.Text = string.Empty;
+        }
+
+        private void getCompChoice()
+        {
+            compChoice = (Choice)rnd.Next(1, 4);
+        }
+
+        private Bitmap CreateChoiceBitmap(Choice c)
+        {
+            const int w = 240, h = 140;
+            var bmp = new Bitmap(w, h);
+            using (var g = Graphics.FromImage(bmp))
+            {
+                g.Clear(SystemColors.ControlDark);
+                string symbol = c switch
+                {
+                    Choice.Rock => "✊",
+                    Choice.Paper => "🖐",
+                    Choice.Scissors => "✌",
+                    _ => string.Empty
+                };
+
+                if (!string.IsNullOrEmpty(symbol))
+                {
+                    using var font = new Font("Segoe UI Emoji", 48F, FontStyle.Regular, GraphicsUnit.Point);
+                    var sz = g.MeasureString(symbol, font);
+                    g.DrawString(symbol, font, Brushes.Black, (w - sz.Width) / 2f, (h - sz.Height) / 2f);
+                }
+            }
+
+            return bmp;
+        }
+
+        private void showComputerImage()
+        {
+            if (compChoice == Choice.None)
+                computerPictureBox.Image = null;
+            else
+                computerPictureBox.Image = CreateChoiceBitmap(compChoice);
+        }
+
+        private void showPlayerImage()
+        {
+            if (playerChoice == Choice.None)
+                playerPictureBox.Image = null;
+            else
+                playerPictureBox.Image = CreateChoiceBitmap(playerChoice);
+        }
+
+        private void showWinner()
+        {
+            if (playerChoice == Choice.None || compChoice == Choice.None)
+                return;
+
+            string resultText;
+
+            if (playerChoice == compChoice)
+            {
+                ties++;
+                resultText = "平手";
+            }
+            else if ((playerChoice == Choice.Rock && compChoice == Choice.Scissors) ||
+                     (playerChoice == Choice.Paper && compChoice == Choice.Rock) ||
+                     (playerChoice == Choice.Scissors && compChoice == Choice.Paper))
+            {
+                playerWins++;
+                resultText = "玩家贏";
+            }
+            else
+            {
+                compWins++;
+                resultText = "電腦贏";
+            }
+
+            resultLabel.Text = $"{resultText}    玩家:{playerWins}    電腦:{compWins}    平手:{ties}";
+        }
+
+        private void stoneButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = Choice.Rock;
+            showPlayerImage();
+            getCompChoice();
+            showComputerImage();
+            showWinner();
+        }
+
+        private void paperButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = Choice.Paper;
+            showPlayerImage();
+            getCompChoice();
+            showComputerImage();
+            showWinner();
+        }
+
+        private void scissorButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = Choice.Scissors;
+            showPlayerImage();
+            getCompChoice();
+            showComputerImage();
+            showWinner();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"遊戲統計:\n玩家: {playerWins}\n電腦: {compWins}\n平手: {ties}", "結束遊戲", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
+        }
+    }
+}
